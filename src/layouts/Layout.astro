@@ -1,0 +1,181 @@
+---
+import '../styles/bootstrap.scss';
+interface Props {
+  title: string;
+  pageDescription: string;
+}
+
+const { title, pageDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={pageDescription} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh-tw" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - 巧植景觀設計有限公司</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <nav class="header__nav">
+          <div>
+            <a href="/">
+              <img class="header__nav-logo" src="/LOGO.jpg" alt="巧植景觀設計有限公司" />
+            </a>
+          </div>
+          <ul class="nav header__nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="/">關於巧植</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/services">服務項目</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/showcase">工程案例</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">聯絡我們</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <slot />
+    </main>
+    <footer class="footer py-3">
+      <div class="container-fluid">
+        <div class="footer__info d-md-flex justify-content-center pt-2">
+          <ul>
+            <li>電話：04-22056677</li>
+            <li>手機：0921-333861 楊小姐</li>
+          </ul>
+          <ul class="vertical-line">
+            <li>Email：joysplanting@gmail.com</li>
+            <li>地址：(404)台中市北區健行路490號</li>
+          </ul>
+        </div>
+        <div class="footer__copyright d-flex justify-content-center pt-2">
+          <span>
+            Copyright © 2024 巧植景觀設計有限公司 | Joysplanting landscape design & engineer Corp.
+          </span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Import only what you need
+      // import 'bootstrap/js/dist/alert';
+      import 'bootstrap/js/dist/button';
+      // import 'bootstrap/js/dist/carousel';
+      // import 'bootstrap/js/dist/collapse';
+      // import 'bootstrap/js/dist/dropdown';
+      // import 'bootstrap/js/dist/modal';
+      // import 'bootstrap/js/dist/offcanvas';
+      // import 'bootstrap/js/dist/popover';
+      // import 'bootstrap/js/dist/scrollspy';
+      // import 'bootstrap/js/dist/tab';
+      // import 'bootstrap/js/dist/toast';
+      // import 'bootstrap/js/dist/tooltip';
+    </script>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    /* background: #13151a; */
+    background-size: 224px;
+    cursor: default;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  .header {
+    padding: 1rem 0;
+    width: 100%;
+    background: linear-gradient(45deg, #006600, #009900);
+    font-weight: 700;
+    /* box-shadow: 0 0 10px #1a1a1a; */
+    /* margin-bottom: 0.25rem; */
+    /* z-index: 999; */
+  }
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__nav-logo {
+    width: 70px;
+    height: 62px;
+  }
+  .header__nav-list {
+    list-style: none;
+    padding-left: 0;
+    align-items: center;
+    justify-content: end;
+  }
+  .main {
+    min-height: 80vh;
+    background-color: rgba(235, 235, 235, 0.6);
+  }
+  .footer {
+    background-color: rgb(20, 38, 28);
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .footer__info ul {
+    line-height: 2rem;
+    list-style: none;
+    padding: 0 1rem;
+    margin: 1rem 0;
+  }
+  .vertical-line {
+    position: relative;
+  }
+  .vertical-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 2px;
+    height: 100%;
+  }
+  @media (max-width: 767.9px) {
+    .footer__info {
+      margin: 1rem 0;
+    }
+    .footer__info ul {
+      margin: 0;
+    }
+    .vertical-line::before {
+      content: none;
+    }
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+---
+
+<Layout title="服務項目" pageDescription="">
+  <Banner imageSource="/services.jpg" bannerTitle="服務項目" />
+  <div class="container py-3">
+    <section class="service-section">
+      <h2 class="fw-bold text-center service-title">巧植可以為您做什麼？</h2>
+      <ul class="row gx-2 gy-3 service__list">
+        <li class="col-sm-4">
+          <div class="service__box">
+            <div class="service__box-title">
+              <img
+                class="service__icon"
+                src="/pencil-square.svg"
+                alt="景觀規劃icon"
+                loading="lazy"
+              />
+              景觀規劃
+            </div>
+            <div class="service__box-content">各式私宅、社區、廠辦、機構景觀規劃設計</div>
+          </div>
+        </li>
+        <li class="col-sm-4">
+          <div class="service__box">
+            <div class="service__box-title">
+              <img class="service__icon" src="/tools.svg" alt="工程施作icon" loading="lazy" />
+              工程施作
+            </div>
+            <div class="service__box-content">
+              設計施工、草木修剪移植、澆灌系統水電、景觀生態池施作、植生綠牆
+            </div>
+          </div>
+        </li>
+        <li class="col-sm-4">
+          <div class="service__box">
+            <div class="service__box-title">
+              <img class="service__icon" src="/person-gear.svg" alt="維護管理icon" loading="lazy" />
+              維護管理
+            </div>
+            <div class="service__box-content">
+              各單位庭園草木修整施肥、枯木更換、病蟲害防治，定期綠美化維護
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="flow-section">
+      <h2 class="fw-bold text-center flow-title">服務流程</h2>
+      <ul class="flow__list">
+        <li class="flow__box">
+          <h3>Step 1 | 諮詢</h3>
+          <img class="flow__box-icon" src="/1_Contacting.png" alt="諮詢icon" />
+          <p>
+            可通過 LINE 或是電話洽詢<br />
+            @joysplanting, 0934333863
+          </p>
+          <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />
+        </li>
+        <li class="flow__box">
+          <h3>Step 2 | 現場丈量</h3>
+          <img class="flow__box-icon" src="/2_Measuring.png" alt="丈量icon" />
+          <p>設計師實際丈量了解需求</p>
+          <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />
+        </li>
+        <li class="flow__box">
+          <h3>Step 3 | 設計</h3>
+          <img class="flow__box-icon" src="/3_Designing.png" alt="設計icon" />
+          <p>設計出圖</p>
+          <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />
+        </li>
+        <li class="flow__box">
+          <h3>Step 4 | 報價簽約</h3>
+          <img class="flow__box-icon" src="/4_Cooperation.png" alt="報價簽約icon" />
+          <p>設計內容協調，簽約收取施工工程款</p>
+          <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />
+        </li>
+        <li class="flow__box">
+          <h3>Step 5 | 施工</h3>
+          <img class="flow__box-icon" src="/5_Construction.png" alt="施工icon" />
+          <p>專業施工人員進場</p>
+          <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />
+        </li>
+        <li class="flow__box">
+          <h3>Step 6 | 完工驗收</h3>
+          <img class="flow__box-icon" src="6_Completion.png" alt="完工驗收icon" />
+          <p>業主的保固權益，後續植栽照顧教學</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .service-title,
+  .flow-title {
+    font-size: 2rem;
+  }
+  .service__list,
+  .flow__list {
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+  }
+  .service__list li,
+  .flow__list li {
+    list-style: none;
+  }
+  .service__box {
+    padding: 1rem;
+    font-weight: 700;
+    color: #7a8085;
+    background-color: #ffffff;
+    height: 100%;
+    transition: all 0.3s;
+  }
+  .service__box:hover {
+    color: #323237;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  .service__box-title {
+    font-size: 1.5rem;
+  }
+  .service__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .service__box-content {
+    margin-top: 0.5rem;
+  }
+  .flow__box {
+    padding: 1rem;
+    font-weight: 700;
+    color: #7a8085;
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .flow__box-icon {
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+    margin: 1rem auto;
+  }
+  .flow__icon-arrow {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    /* color: #198754; */
+  }
+  .flow__box:last-of-type {
+    margin-bottom: 0;
+  }
+</style>

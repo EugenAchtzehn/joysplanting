@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+---
+
+<Layout title="工程案例" pageDescription="">
+  <Banner imageSource="/showcase.jpg" bannerTitle="我們的實績" />
+  <div class="container py-3">
+    <section class="cases_section">
+      <h2 class="fw-bold">工程案例</h2>
+      <ul>
+        <li>台中大坑明倫山莊景觀工程</li>
+        <li>后里寵物咖啡景觀設計工程案</li>
+        <li>新竹某國小設計案</li>
+        <li>台中東區某國小教育園區設計工程案</li>
+        <li>芬園鐵工廠景觀設計工程案</li>
+        <li>台中吳公館景觀設計工程案</li>
+      </ul>
+    </section>
+    <section class="awards_section">
+      <h2 class="fw-bold">獲獎案例 & 報導</h2>
+      <h3 class="fw-bold">
+        <a
+          class="link-success"
+          href="https://a.go8.in/on/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          懋榮建設花雨歇
+        </a>
+      </h3>
+      <ul>
+        <li>
+          此案與生態建築的先驅者–懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
+          2022 年台灣園冶獎的肯定，並曾受邀至
+          <a
+            class="link-success"
+            href="https://www.president.gov.tw/News/27241"
+            target="_blank"
+            rel="noopener noreferrer">總統府領獎</a
+          >
+        </li>
+        <li>
+          <a
+            class="link-success"
+            href="https://money.udn.com/money/story/5635/6576211"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2022 建築園冶獎相關報導
+          </a>
+        </li>
+        <li>
+          <a
+            class="link-success"
+            href="https://house.chinatimes.com/20230310000009-264401"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            設計新秀楊舜媛 讓「花雨歇」日夜皆美
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+  .awards_section a {
+    text-decoration: none;
+  }
+</style>

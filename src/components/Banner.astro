@@ -1,0 +1,47 @@
+---
+interface Props {
+  imageSource: string;
+  bannerTitle: string;
+}
+
+const { imageSource, bannerTitle } = Astro.props;
+---
+
+<div class="banner__section">
+  <img class="banner-image" src={imageSource} alt={bannerTitle + '橫幅圖片'} />
+  <h1 class="banner-title">{bannerTitle}</h1>
+  <p class="banner-subtitle"></p>
+</div>
+<style>
+  h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .banner__section {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .banner-image {
+    width: 100%;
+  }
+  .banner-title {
+    color: #ffffff;
+    background-color: rgba(25, 135, 84, 0.7);
+    /* background-color: #198754; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    padding: 1.2rem;
+    margin: 0;
+  }
+  /* .banner-subtitle {
+		color: #ffffff;
+		position: absolute;
+        top: calc(50% + 2.6rem + 1.5vw);
+        left: 50%;
+		transform: translate(-50%, -50%);
+	} */
+</style>

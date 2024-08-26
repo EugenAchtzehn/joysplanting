@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banner from '../components/Banner.astro';
+---
+
+<Layout
+  title="聯絡我們"
+  pageDescription="歡迎您依照需求，填寫正確的資訊並聯絡我們，以提供最合適的服務"
+>
+  <Banner imageSource="/contact-by-phone.jpg" bannerTitle="聯絡我們" />
+  <div class="container py-3">
+    <div class="row gx-2 gy-4 info__section">
+      <div class="col-md-4">
+        <section class="send__section">
+          <h3 class="fw-bold text-center mb-0 p-3">諮詢服務和取得報價</h3>
+        </section>
+      </div>
+      <div class="col-md-4">
+        <section class="contact__section">
+          <h3 class="fw-bold text-center mb-0 p-3">聯絡資訊</h3>
+          <ul class="contatct__section-list">
+            <li>
+              <img src="/pin-map.svg" alt="地圖icon" loading="eager" />
+              <span>(404)台中市北區健行路490號</span>
+            </li>
+            <li>
+              <img src="/mailbox.svg" alt="電子郵件icon" loading="lazy" />
+              <span>joysplanting@gmail.com</span>
+            </li>
+            <li>
+              <img src="/phone.svg" alt="行動電話icon" loading="lazy" />
+              <span>0921-333-861</span>
+            </li>
+            <li>
+              <img src="/telephone.svg" alt="電話icon" loading="lazy" />
+              <span>04-22056677</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-md-4">
+        <section class="map__section ratio ratio-4x3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.7387363629205!2d120.67774445660372!3d24.159197497111794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d636d1ab1c5%3A0x191d3401405dd7f7!2zNDA05Y-w54Gj5Y-w5Lit5biC5YyX5Y2A5YGl6KGM6LevNDkw6Jmf!5e0!3m2!1szh-TW!2sus!4v1724473163980!5m2!1szh-TW!2sus"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .info__section {
+    margin-bottom: 4rem;
+  }
+  .send__section,
+  .contact__section {
+    background-color: #ffffff;
+    height: 100%;
+  }
+  .contatct__section-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .contatct__section-list li {
+    padding: 0.5rem 0;
+    color: #198754;
+    /* transition: all .3s; */
+  }
+  .contatct__section-list li:hover {
+    /* text-shadow: 1px 1px 8px #a6a6a6; */
+  }
+  .contatct__section-list li span,
+  .contatct__section-list li img {
+    padding-left: 0.75rem;
+  }
+</style>
