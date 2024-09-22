@@ -174,6 +174,9 @@ const { title, pageDescription } = Astro.props;
       Courier New,
       monospace;
   }
+  body {
+    background-color: rgba(235, 235, 235, 0.6);
+  }
   .header {
     padding: 1rem 0;
     width: 100%;
@@ -202,7 +205,11 @@ const { title, pageDescription } = Astro.props;
   }
   .main {
     min-height: 80vh;
-    background-color: rgba(235, 235, 235, 0.6);
+  }
+  .banner-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .footer {
     background-color: rgb(20, 38, 28);

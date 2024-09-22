@@ -1,11 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-// import Banner from '../components/Banner.astro';
-import ShowcaseBanner from '../components/ShowcaseBanner.astro';
+
+import Banner from '../components/Banner.astro';
+
+import showcaseImage from '../images/showcase.jpg';
 ---
 
 <Layout title="工程案例" pageDescription="">
-  <ShowcaseBanner bannerTitle="我們的實績" />
+  <Banner bannerTitle="我們的實績">
+    <Image class="banner-image" src={showcaseImage} alt="我們的實績橫幅圖片" loading="eager" />
+  </Banner>
+
   <div class="container py-3">
     <section class="cases__section">
       <h2 class="fw-bold">工程案例</h2>
@@ -32,7 +38,7 @@ import ShowcaseBanner from '../components/ShowcaseBanner.astro';
       </h3>
       <ul>
         <li>
-          此案與生態建築的先驅者–懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
+          此案與生態建築的先驅者-懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
           2022 年台灣園冶獎的肯定，並曾受邀至
           <a
             class="link-success"

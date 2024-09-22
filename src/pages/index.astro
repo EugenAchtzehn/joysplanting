@@ -1,11 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import IndexBanner from '../components/IndexBanner.astro';
+
+import Banner from '../components/Banner.astro';
+
+import gardenImage from '../images/garden.jpg';
 ---
 
 <Layout title="關於巧植" pageDescription="">
-  <IndexBanner bannerTitle="關於巧植" />
-  <div class="container py-3">
+  <Banner bannerTitle="關於巧植">
+    <Image class="banner-image" src={gardenImage} alt="關於巧植橫幅圖片" loading="eager" />
+  </Banner>
+
+  <div class="container py-3 mb-5">
     <div class="row gx-2 gy-3 intro__section">
       <div class="col-sm-4">
         <section class="intro__box">

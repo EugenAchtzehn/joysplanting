@@ -1,13 +1,24 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import ContactBanner from '../components/ContactBanner.astro';
+import Banner from '../components/Banner.astro';
+
+import contactImage from '../images/contact-by-phone.jpg';
+
+import mapIcon from '../images/pin-map.svg';
+import mailboxIcon from '../images/mailbox.svg';
+import phoneIcon from '../images/phone.svg';
+import telephoneIcon from '../images/telephone.svg';
 ---
 
 <Layout
   title="聯絡我們"
   pageDescription="歡迎您依照需求，填寫正確的資訊並聯絡我們，以提供最合適的服務"
 >
-  <ContactBanner bannerTitle="聯絡我們" />
+  <Banner bannerTitle="聯絡我們">
+    <Image class="banner-image" src={contactImage} alt="聯絡我們橫幅圖片" loading="eager" />
+  </Banner>
+
   <div class="container py-3">
     <div class="row gx-2 gy-4 info__section">
       <div class="col-md-4">
@@ -20,19 +31,19 @@ import ContactBanner from '../components/ContactBanner.astro';
           <h3 class="fw-bold text-center mb-0 p-3">聯絡資訊</h3>
           <ul class="contatct__section-list">
             <li>
-              <img src="/joysplanting/pin-map.svg" alt="地圖icon" loading="eager" />
+              <Image src={mapIcon} alt="地圖icon" loading="lazy" />
               <span>(404)台中市北區健行路490號</span>
             </li>
             <li>
-              <img src="/joysplanting/mailbox.svg" alt="電子郵件icon" loading="lazy" />
+              <Image src={mailboxIcon} alt="電子郵件icon" loading="lazy" />
               <span>joysplanting@gmail.com</span>
             </li>
             <li>
-              <img src="/joysplanting/phone.svg" alt="行動電話icon" loading="lazy" />
+              <Image src={phoneIcon} alt="行動電話icon" loading="lazy" />
               <span>0921-333-861</span>
             </li>
             <li>
-              <img src="/joysplanting/telephone.svg" alt="電話icon" loading="lazy" />
+              <Image src={telephoneIcon} alt="電話icon" loading="lazy" />
               <span>04-22056677</span>
             </li>
           </ul>
@@ -53,7 +64,7 @@ import ContactBanner from '../components/ContactBanner.astro';
   </div>
 </Layout>
 
-<style>
+<style lang="scss">
   .info__section {
     margin-bottom: 4rem;
   }
@@ -76,8 +87,15 @@ import ContactBanner from '../components/ContactBanner.astro';
   .contatct__section-list li:hover {
     /* text-shadow: 1px 1px 8px #a6a6a6; */
   }
-  .contatct__section-list li span,
-  .contatct__section-list li img {
-    padding-left: 0.75rem;
+  .contatct__section-list {
+    li {
+      img {
+        margin-left: 0.75rem;
+        display: inline-block;
+      }
+      span {
+        margin-left: 0.75rem;
+      }
+    }
   }
 </style>
