@@ -1,0 +1,49 @@
+---
+interface Props {
+  boxTitle: string;
+  boxImageSource: string;
+  boxImageAlt: string;
+  description: string;
+  //   effectName: string;
+  //   effectDuration: string;
+  showArrow: boolean;
+}
+
+const { boxTitle, boxImageSource, boxImageAlt, description, showArrow } = Astro.props;
+---
+
+<li class="flow__box" data-aos="fade-down" data-aos-duration="1500">
+  <h3>{boxTitle}</h3>
+  <img class="flow__box-icon" src={boxImageSource} alt={boxImageAlt} />
+  <p>{description}</p>
+  {showArrow && <img class="flow__icon-arrow" src="/arrow-down.svg" alt="箭頭icon" />}
+</li>
+
+<style>
+  .flow__box {
+    padding: 1rem;
+    font-weight: 700;
+    color: #7a8085;
+    text-align: center;
+    background-color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .flow__box-icon {
+    max-width: 3rem;
+    max-height: 3rem;
+    display: block;
+    margin: 1rem auto;
+  }
+  .flow__icon-arrow {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    /* color: #198754; */
+  }
+  .flow__box:last-of-type {
+    margin-bottom: 0;
+  }
+</style>

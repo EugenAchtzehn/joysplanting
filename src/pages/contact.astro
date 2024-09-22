@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Banner from '../components/Banner.astro';
+import ContactBanner from '../components/ContactBanner.astro';
 ---
 
 <Layout
   title="聯絡我們"
   pageDescription="歡迎您依照需求，填寫正確的資訊並聯絡我們，以提供最合適的服務"
 >
-  <Banner imageSource="/contact-by-phone.jpg" bannerTitle="聯絡我們" />
+  <ContactBanner bannerTitle="聯絡我們" />
   <div class="container py-3">
     <div class="row gx-2 gy-4 info__section">
       <div class="col-md-4">
@@ -43,8 +43,9 @@ import Banner from '../components/Banner.astro';
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.7387363629205!2d120.67774445660372!3d24.159197497111794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d636d1ab1c5%3A0x191d3401405dd7f7!2zNDA05Y-w54Gj5Y-w5Lit5biC5YyX5Y2A5YGl6KGM6LevNDkw6Jmf!5e0!3m2!1szh-TW!2sus!4v1724473163980!5m2!1szh-TW!2sus"
             style="border:0;"
+            title="地址位置"
             allowfullscreen=""
-            loading="lazy"
+            loading="eager"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
       </div>

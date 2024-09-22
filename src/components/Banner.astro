@@ -1,14 +1,12 @@
 ---
 interface Props {
-  imageSource: string;
   bannerTitle: string;
 }
-
-const { imageSource, bannerTitle } = Astro.props;
+const { bannerTitle } = Astro.props;
 ---
 
 <div class="banner__section">
-  <img class="banner-image" src={imageSource} alt={bannerTitle + '橫幅圖片'} />
+  <slot />
   <h1 class="banner-title">{bannerTitle}</h1>
   <p class="banner-subtitle"></p>
 </div>
@@ -21,9 +19,6 @@ const { imageSource, bannerTitle } = Astro.props;
   .banner__section {
     margin-bottom: 2rem;
     position: relative;
-  }
-  .banner-image {
-    width: 100%;
   }
   .banner-title {
     color: #ffffff;

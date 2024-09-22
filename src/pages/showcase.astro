@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Banner from '../components/Banner.astro';
+// import Banner from '../components/Banner.astro';
+import ShowcaseBanner from '../components/ShowcaseBanner.astro';
 ---
 
 <Layout title="工程案例" pageDescription="">
-  <Banner imageSource="/showcase.jpg" bannerTitle="我們的實績" />
+  <ShowcaseBanner bannerTitle="我們的實績" />
   <div class="container py-3">
-    <section class="cases_section">
+    <section class="cases__section">
       <h2 class="fw-bold">工程案例</h2>
       <ul>
         <li>台中大坑明倫山莊景觀工程</li>
@@ -17,7 +18,7 @@ import Banner from '../components/Banner.astro';
         <li>台中吳公館景觀設計工程案</li>
       </ul>
     </section>
-    <section class="awards_section">
+    <section class="awards__section">
       <h2 class="fw-bold">獲獎案例 & 報導</h2>
       <h3 class="fw-bold">
         <a
@@ -69,7 +70,7 @@ import Banner from '../components/Banner.astro';
   h1 {
     text-align: center;
   }
-  .awards_section a {
+  .awards__section a {
     text-decoration: none;
   }
 </style>

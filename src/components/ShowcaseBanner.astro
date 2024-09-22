@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import Banner from './Banner.astro';
+import showcaseImage from '../images/showcase.jpg';
+interface Props {
+  bannerTitle: string;
+}
+const { bannerTitle } = Astro.props;
+---
+
+<Banner bannerTitle={bannerTitle}>
+  <Image class="banner-image" src={showcaseImage} alt={bannerTitle + '橫幅圖片'} loading="eager" />
+</Banner>
+
+<style>
+  .banner-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>

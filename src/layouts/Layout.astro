@@ -1,5 +1,6 @@
 ---
 import '../styles/bootstrap.scss';
+import MobileMenu from '../components/MobileMenu.astro';
 interface Props {
   title: string;
   pageDescription: string;
@@ -27,12 +28,12 @@ const { title, pageDescription } = Astro.props;
     <header class="header">
       <div class="container-fluid">
         <nav class="header__nav">
-          <div>
+          <div class="header__nav-logowrap">
             <a href="/">
               <img class="header__nav-logo" src="/LOGO.jpg" alt="巧植景觀設計有限公司" />
             </a>
           </div>
-          <ul class="nav header__nav-list">
+          <ul class="nav header__nav-list" id="header__nav-list">
             <li class="nav-item">
               <a class="nav-link" href="/">關於巧植</a>
             </li>
@@ -46,6 +47,8 @@ const { title, pageDescription } = Astro.props;
               <a class="nav-link" href="/contact">聯絡我們</a>
             </li>
           </ul>
+          <div class="header__nav-fold" id="header__nav-fold"></div>
+          <!-- <MobileMenu /> -->
         </nav>
       </div>
     </header>
@@ -56,18 +59,60 @@ const { title, pageDescription } = Astro.props;
       <div class="container-fluid">
         <div class="footer__info d-md-flex justify-content-center pt-2">
           <ul>
-            <li>電話：04-22056677</li>
-            <li>手機：0921-333861 楊小姐</li>
+            <li>
+              電話：
+              <a
+                class="footer__info-link"
+                href="tel:04-22056677"
+                rel="noopener noreferrer"
+                title="市話:04-22056677"
+              >
+                04-22056677</a
+              >
+            </li>
+            <li>
+              手機：
+              <a
+                class="footer__info-link"
+                href="tel:0921-333861"
+                rel="noopener noreferrer"
+                title="手機:0921-333861"
+              >
+                0921-333861</a
+              >
+              楊小姐
+            </li>
           </ul>
           <ul class="vertical-line">
-            <li>Email：joysplanting@gmail.com</li>
+            <li>
+              Email:
+              <a
+                class="footer__info-link"
+                href="mailto:joysplanting@gmail.com"
+                rel="noopener noreferrer"
+                title="Email:joysplanting@gmail.com"
+              >
+                joysplanting@gmail.com
+              </a>
+            </li>
             <li>地址：(404)台中市北區健行路490號</li>
           </ul>
         </div>
-        <div class="footer__copyright d-flex justify-content-center pt-2">
-          <span>
+        <div class="footer__copyright">
+          <a
+            class="d-block text-center footer__copyright-link"
+            href="https://www.flaticon.com/"
+            title="icon attribution"
+            target="_blank"
+            rel="noopener noreferrer">Icons provided by Flaticon</a
+          >
+          <a
+            class="d-block text-center footer__copyright-link"
+            href="https://www.flaticon.com/"
+            title="版權聲明"
+          >
             Copyright © 2024 巧植景觀設計有限公司 | Joysplanting landscape design & engineer Corp.
-          </span>
+          </a>
         </div>
       </div>
     </footer>
@@ -85,6 +130,14 @@ const { title, pageDescription } = Astro.props;
       // import 'bootstrap/js/dist/tab';
       // import 'bootstrap/js/dist/toast';
       // import 'bootstrap/js/dist/tooltip';
+
+      import $ from 'jquery';
+
+      $(function () {
+        $('#header__nav-fold').on('click', function () {
+          $('#header__nav-list').toggle();
+        });
+      });
     </script>
   </body>
 </html>
@@ -140,6 +193,9 @@ const { title, pageDescription } = Astro.props;
     align-items: center;
     justify-content: end;
   }
+  .header__nav-fold {
+    display: none;
+  }
   .main {
     min-height: 80vh;
     background-color: rgba(235, 235, 235, 0.6);
@@ -155,6 +211,15 @@ const { title, pageDescription } = Astro.props;
     padding: 0 1rem;
     margin: 1rem 0;
   }
+  .footer__info-link {
+    color: #ffffff;
+  }
+  .footer__copyright-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+  }
   .vertical-line {
     position: relative;
   }
@@ -169,13 +234,41 @@ const { title, pageDescription } = Astro.props;
   }
   @media (max-width: 767.9px) {
     .footer__info {
-      margin: 1rem 0;
+      margin: 0.8rem 0;
     }
     .footer__info ul {
       margin: 0;
     }
     .vertical-line::before {
       content: none;
+    }
+  }
+  @media (max-width: 575.9px) {
+    .header__nav {
+      display: block;
+    }
+    .header {
+      position: relative;
+      min-height: calc(62px + 2rem);
+    }
+    .header__nav-logowrap {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1;
+    }
+    .header__nav-list {
+      display: none;
+      text-align: center;
+    }
+    .header__nav-fold {
+      display: block;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #ffffff;
+      top: 1rem;
+      right: 1rem;
     }
   }
 </style>
