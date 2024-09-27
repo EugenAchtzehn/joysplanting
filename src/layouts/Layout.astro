@@ -14,14 +14,16 @@ const { title, pageDescription } = Astro.props;
 <html lang="zh-Hant-TW">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CH1NXVCBT"></script>
+    <script
+      type="application/javascript"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8CH1NXVCBT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-8CH1NXVCBT');
     </script>
     <meta charset="UTF-8" />
