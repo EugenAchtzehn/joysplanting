@@ -2,6 +2,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://eugenachtzehn.github.io/',
-  base: 'joysplanting',
+  site: 'https://new.joysplanting.com',
+  // base: 'joysplanting',
 });

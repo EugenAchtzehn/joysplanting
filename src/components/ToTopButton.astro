@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+import arrowUp from '../images/arrow-up-white.svg';
+---
+
+<div class="aside__top" style={Astro.props.style}>
+  <Image class="aside__top-image" src={arrowUp} alt="回到頁面頂端" loading="eager" />
+</div>
+
+<style>
+  .aside__top {
+    background-color: #198754;
+    display: inline-block;
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    right: 1rem;
+    bottom: 2rem;
+    cursor: pointer;
+  }
+  .aside__top-image {
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+<script>
+  import $ from 'jquery';
+  $(function () {
+    $('.aside__top').on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 100, 'linear');
+    });
+  });
+</script>

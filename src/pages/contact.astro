@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
+import NewLinkButton from '../components/NewLinkButton.astro';
 
 import contactImage from '../images/contact-by-phone.jpg';
 
@@ -24,6 +25,9 @@ import telephoneIcon from '../images/telephone.svg';
       <div class="col-md-4">
         <section class="send__section">
           <h3 class="fw-bold text-center mb-0 p-3">諮詢服務和取得報價</h3>
+          <div class="send__section-links">
+            <NewLinkButton link="javascript:;" buttonText="現在聯絡" />
+          </div>
         </section>
       </div>
       <div class="col-md-4">
@@ -72,6 +76,15 @@ import telephoneIcon from '../images/telephone.svg';
   .contact__section {
     background-color: #ffffff;
     height: 100%;
+  }
+  .send__section-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // button's min-height plus margin and additional 2rem
+    // min-height: calc(4rem + 2px + 2rem);
+    min-height: 10rem;
+    padding: 0 1rem;
   }
   .contatct__section-list {
     list-style: none;

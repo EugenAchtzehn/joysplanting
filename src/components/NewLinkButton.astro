@@ -1,0 +1,78 @@
+---
+interface Props {
+  link: string;
+  buttonText: string;
+}
+const { link, buttonText } = Astro.props;
+---
+
+<div class="link-button-wrap">
+  <a href={link} class="link-button">{buttonText}</a>
+  <span class="link-button-shadow"></span>
+</div>
+
+<style>
+  .link-button-wrap {
+    position: relative;
+    /* display: inline-block; */
+    margin: 0.5rem;
+    /* 最小高度 3rem + 陰影位移 2px */
+    min-height: calc(3rem + 2px);
+  }
+  .link-button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 3rem;
+
+    background-color: #198754;
+    border: 2px solid #2d2d2d;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 0 1.5rem;
+
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .link-button-shadow {
+    display: inline-block;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: translate(2px, 2px);
+
+    width: 100%;
+    min-height: 3rem;
+
+    background-color: #2d2d2d;
+    border-radius: 0.5rem;
+
+    transition: transform 0.2s ease-out;
+  }
+  .link-button-wrap:hover .link-button-shadow {
+    transform: translate(0, 0);
+  }
+  .link-button:active {
+    background-color: #198754;
+    outline: 0;
+  }
+  .link-button:hover {
+    outline: 0;
+  }
+</style>

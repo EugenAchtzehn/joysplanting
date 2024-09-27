@@ -1,0 +1,194 @@
+---
+import { Image } from 'astro:assets';
+import joysplantingLogo from '../images/LOGO.jpg';
+---
+
+<header class="header">
+  <section class="container-fluid">
+    <div class="header__content-wrap">
+      <div class="header__logo">
+        <a href="/">
+          <Image class="img" src={joysplantingLogo} alt="巧植景觀設計Logo" loading="eager" />
+        </a>
+      </div>
+      <div class="header__mobile-menu-wrap">
+        <div class="header__mobile-menu" id="headerMobileMenu">
+          <div class="menu-bar bar-top"></div>
+          <div class="menu-bar bar-middle"></div>
+          <div class="menu-bar bar-bottom"></div>
+        </div>
+      </div>
+      <ul class="header__menu" id="headerMenu">
+        <li>
+          <a class="header__menu-link" href="/">關於巧植</a>
+        </li>
+        <li>
+          <a class="header__menu-link" href="/services">服務項目</a>
+        </li>
+        <li>
+          <a class="header__menu-link" href="/showcase">工程案例</a>
+        </li>
+        <li>
+          <a class="header__menu-link" href="/contact">聯絡我們</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</header>
+
+<style lang="scss">
+  .header {
+    // padding: 1rem 0;
+    width: 100%;
+    background: linear-gradient(45deg, #006600, #009900);
+    font-weight: 700;
+    /* box-shadow: 0 0 10px #1a1a1a; */
+    /* margin-bottom: 0.25rem; */
+    /* z-index: 999; */
+  }
+  .header__logo {
+    .img {
+      height: 70px;
+      width: 70px;
+      // object-fit: cover;
+    }
+  }
+  .header__content-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative;
+  }
+  .header__menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+      align-self: center;
+    }
+  }
+  .header__menu-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    color: #ffffff;
+  }
+  .header__menu-link:hover {
+    color: #e6e6e6;
+  }
+  .header__mobile-menu-wrap {
+    display: none;
+    position: absolute;
+    top: calc((70px + 2rem) / 2);
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+  .header__mobile-menu {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+    &.active {
+      .bar-top {
+        transform: translateY(10px) rotate(-45deg);
+      }
+      .bar-middle {
+        display: none;
+      }
+      .bar-bottom {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .menu-bar {
+    height: 2px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+  .bar-top {
+    margin-top: 10px;
+  }
+  .bar-middle {
+    margin-top: 10px;
+  }
+  .bar-bottom {
+    margin-top: 10px;
+  }
+
+  // lg breakpoint
+  // Mobile / PC 切換斷點
+  @media (max-width: 991.9px) {
+    .header__logo {
+      // margin-bottom: 1rem;
+    }
+    .header__menu {
+      padding-top: 1rem;
+      display: none;
+      opacity: 0;
+      transition: all 0.3s;
+      // For setting opacity of display: none element
+      transition-behavior: allow-discrete;
+      @starting-style {
+        opacity: 0;
+      }
+      li {
+        text-align: center;
+        font-size: 1.2rem;
+        border: 1px solid #ffffff;
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 1rem 0;
+        }
+      }
+      &.opacity-1 {
+        opacity: 1;
+      }
+    }
+    .header__mobile-menu-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .header__content-wrap {
+      display: block;
+    }
+  }
+
+  // sm breakpoint
+  // Logo 變小斷點
+  @media (max-width: 575.9px) {
+    .header__mobile-menu-wrap {
+      top: calc((70px + 2rem) / 2);
+    }
+  }
+</style>
+<script>
+  import $ from 'jquery';
+  $('#headerMobileMenu').on('click', function () {
+    // $('#headerMenu').toggle(300);
+    $('#headerMenu').toggleClass('d-block opacity-1');
+    $(this).toggleClass('active');
+  });
+
+  $(window).on('resize', function () {
+    const windowWidth = $(this).width();
+    if (windowWidth > 991.9) {
+      // 強制解除選單的區塊顯示，恢復成css的
+      $('#headerMenu').removeClass('d-block opacity-1');
+      // 強制結束移動裝置表單開啟狀態
+      $('#headerMobileMenu').removeClass('active');
+    }
+  });
+</script>

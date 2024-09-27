@@ -1,6 +1,7 @@
 ---
 import '../styles/bootstrap.scss';
-import MobileMenu from '../components/MobileMenu.astro';
+import Header from '../components/Header.astro';
+import ToTopButton from '../components/ToTopButton.astro';
 interface Props {
   title: string;
   pageDescription: string;
@@ -20,42 +21,12 @@ const { title, pageDescription } = Astro.props;
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="zh-tw" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/joysplanting/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} - 巧植景觀設計有限公司</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container-fluid">
-        <nav class="header__nav">
-          <div class="header__nav-logowrap">
-            <a href="/joysplanting/">
-              <img
-                class="header__nav-logo"
-                src="/joysplanting/LOGO.jpg"
-                alt="巧植景觀設計有限公司"
-              />
-            </a>
-          </div>
-          <ul class="nav header__nav-list" id="header__nav-list">
-            <li class="nav-item">
-              <a class="nav-link" href="/joysplanting/">關於巧植</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/joysplanting/services">服務項目</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/joysplanting/showcase">工程案例</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/joysplanting/contact">聯絡我們</a>
-            </li>
-          </ul>
-          <div class="header__nav-fold" id="header__nav-fold"></div>
-          <!-- <MobileMenu /> -->
-        </nav>
-      </div>
-    </header>
+    <Header />
     <main class="main">
       <slot />
     </main>
@@ -120,6 +91,7 @@ const { title, pageDescription } = Astro.props;
         </div>
       </div>
     </footer>
+    <ToTopButton />
     <script>
       // Import only what you need
       // import 'bootstrap/js/dist/alert';
@@ -134,14 +106,6 @@ const { title, pageDescription } = Astro.props;
       // import 'bootstrap/js/dist/tab';
       // import 'bootstrap/js/dist/toast';
       // import 'bootstrap/js/dist/tooltip';
-
-      import $ from 'jquery';
-
-      $(function () {
-        $('#header__nav-fold').on('click', function () {
-          $('#header__nav-list').toggle();
-        });
-      });
     </script>
   </body>
 </html>
@@ -176,32 +140,6 @@ const { title, pageDescription } = Astro.props;
   }
   body {
     background-color: rgba(235, 235, 235, 0.6);
-  }
-  .header {
-    padding: 1rem 0;
-    width: 100%;
-    background: linear-gradient(45deg, #006600, #009900);
-    font-weight: 700;
-    /* box-shadow: 0 0 10px #1a1a1a; */
-    /* margin-bottom: 0.25rem; */
-    /* z-index: 999; */
-  }
-  .header__nav {
-    display: flex;
-    justify-content: space-between;
-  }
-  .header__nav-logo {
-    width: 70px;
-    height: 62px;
-  }
-  .header__nav-list {
-    list-style: none;
-    padding-left: 0;
-    align-items: center;
-    justify-content: end;
-  }
-  .header__nav-fold {
-    display: none;
   }
   .main {
     min-height: 80vh;
@@ -255,31 +193,5 @@ const { title, pageDescription } = Astro.props;
     }
   }
   @media (max-width: 575.9px) {
-    .header__nav {
-      display: block;
-    }
-    .header {
-      position: relative;
-      min-height: calc(62px + 2rem);
-    }
-    .header__nav-logowrap {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      z-index: 1;
-    }
-    .header__nav-list {
-      display: none;
-      text-align: center;
-    }
-    .header__nav-fold {
-      display: block;
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background-color: #ffffff;
-      top: 1rem;
-      right: 1rem;
-    }
   }
 </style>
