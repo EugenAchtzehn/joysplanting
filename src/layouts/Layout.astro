@@ -13,6 +13,17 @@ const { title, pageDescription } = Astro.props;
 <!doctype html>
 <html lang="zh-Hant-TW">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CH1NXVCBT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-8CH1NXVCBT');
+    </script>
     <meta charset="UTF-8" />
     <meta name="description" content={pageDescription} />
     <meta property="og:description" content={pageDescription} />
@@ -25,6 +36,7 @@ const { title, pageDescription } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title} - 巧植景觀設計有限公司</title>
   </head>
+
   <body>
     <Header />
     <main class="main">
