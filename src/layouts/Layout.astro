@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, pageDescription } = Astro.props;
+const { url } = Astro;
 ---
 
 <!doctype html>
@@ -25,11 +26,13 @@ const { title, pageDescription } = Astro.props;
     </script>
     <meta charset="UTF-8" />
     <meta name="description" content={pageDescription} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content={title + ' - 巧植景觀設計有限公司'} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={url.origin + '/joysplanting-social-logo.jpg'} />
     <meta property="og:locale" content="zh-tw" />
+
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="6p63w2pzZERH15SGseLdkr6iWr_u6IBWlXehKVRTo-8" />
     <meta name="viewport" content="width=device-width" />

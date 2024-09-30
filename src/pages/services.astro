@@ -20,7 +20,10 @@ import constructIcon_5 from '../images/5_Construction.png';
 import completeIcon_6 from '../images/6_Completion.png';
 ---
 
-<Layout title="服務項目" pageDescription="">
+<Layout
+  title="服務項目"
+  pageDescription="巧植提供以下各項服務：景觀規劃、工程施作、維護管理。標準的服務流程為：聯絡諮詢、現場丈量、出圖設計、報價簽約、進場施工、完工驗收"
+>
   <Banner bannerTitle="服務項目">
     <Image class="banner-image" src={serviceImage} alt="服務項目橫幅圖片" loading="eager" />
   </Banner>
@@ -66,7 +69,7 @@ import completeIcon_6 from '../images/6_Completion.png';
       <h2 class="fw-bold text-center flow-title">服務流程</h2>
       <ul class="flow__list">
         <ServicesBox
-          boxTitle="Step 1 | 諮詢"
+          boxTitle="Step 1 | 聯絡諮詢"
           description="可通過 LINE @joysplanting 或來電洽詢 0934333863"
           showArrow={true}
         >
@@ -79,7 +82,7 @@ import completeIcon_6 from '../images/6_Completion.png';
         >
           <Image class="flow__box-icon" src={measureIcon_2} alt="丈量icon" loading="eager" />
         </ServicesBox>
-        <ServicesBox boxTitle="Step 3 | 設計" description="設計出圖" showArrow={true}>
+        <ServicesBox boxTitle="Step 3 | 設計出圖" description="設計出圖" showArrow={true}>
           <Image class="flow__box-icon" src={designIcon_3} alt="設計icon" loading="eager" />
         </ServicesBox>
         <ServicesBox
@@ -89,7 +92,7 @@ import completeIcon_6 from '../images/6_Completion.png';
         >
           <Image class="flow__box-icon" src={cooperateIcon_4} alt="報價簽約icon" loading="eager" />
         </ServicesBox>
-        <ServicesBox boxTitle="Step 5 | 施工" description="專業施工人員進場" showArrow={true}>
+        <ServicesBox boxTitle="Step 5 | 進場施工" description="專業施工人員進場" showArrow={true}>
           <Image class="flow__box-icon" src={constructIcon_5} alt="施工icon" loading="eager" />
         </ServicesBox>
         <ServicesBox
