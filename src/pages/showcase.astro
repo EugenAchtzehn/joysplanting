@@ -28,7 +28,7 @@ import showcaseImage from '../images/showcase.jpg';
       <h2 class="fw-bold">獲獎案例 & 報導</h2>
       <h3 class="fw-bold">
         <a
-          class="link-success"
+          class="awards__section-link"
           href="https://a.go8.in/on/"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +41,7 @@ import showcaseImage from '../images/showcase.jpg';
           此案與生態建築的先驅者-懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
           2022 年台灣園冶獎的肯定，並曾受邀至
           <a
-            class="link-success"
+            class="awards__section-link"
             href="https://www.president.gov.tw/News/27241"
             target="_blank"
             rel="noopener noreferrer">總統府領獎</a
@@ -49,7 +49,7 @@ import showcaseImage from '../images/showcase.jpg';
         </li>
         <li>
           <a
-            class="link-success"
+            class="awards__section-link"
             href="https://money.udn.com/money/story/5635/6576211"
             target="_blank"
             rel="noopener noreferrer"
@@ -59,7 +59,7 @@ import showcaseImage from '../images/showcase.jpg';
         </li>
         <li>
           <a
-            class="link-success"
+            class="awards__section-link"
             href="https://house.chinatimes.com/20230310000009-264401"
             target="_blank"
             rel="noopener noreferrer"
@@ -72,11 +72,17 @@ import showcaseImage from '../images/showcase.jpg';
   </div>
 </Layout>
 
-<style>
+<style lang="scss">
   h1 {
     text-align: center;
   }
-  .awards__section a {
-    text-decoration: none;
+  .awards__section {
+    .awards__section-link {
+      text-decoration: none;
+      color: #0e5834;
+      &:hover {
+        color: #052e1a;
+      }
+    }
   }
 </style>
