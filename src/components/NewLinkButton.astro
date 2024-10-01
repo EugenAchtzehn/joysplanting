@@ -7,7 +7,9 @@ const { link, buttonText } = Astro.props;
 ---
 
 <div class="link-button-wrap">
-  <a href={link} class="link-button">{buttonText}</a>
+  <a href={link} class="link-button" rel="noopener noreferrer" title={buttonText + '超連結按鈕'}>
+    {buttonText}
+  </a>
   <span class="link-button-shadow"></span>
 </div>
 
