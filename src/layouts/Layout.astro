@@ -50,7 +50,7 @@ const { url } = Astro;
     <main class="main">
       <slot />
     </main>
-    <footer class="footer py-3">
+    <footer class="footer pt-3 pb-5">
       <div class="container-fluid">
         <div class="footer__info d-md-flex justify-content-center pt-2">
           <ul>
@@ -129,7 +129,7 @@ const { url } = Astro;
     </script>
   </body>
 </html>
-<style is:global>
+<style is:global lang="scss">
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -164,11 +164,19 @@ const { url } = Astro;
   .main {
     min-height: 80vh;
   }
+
+  // Styles for the Banner Component
   .banner-image {
     width: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &.img-loaded {
+      opacity: 1;
+    }
   }
+
   .footer {
     background-color: rgb(20, 38, 28);
     color: #ffffff;
@@ -186,7 +194,7 @@ const { url } = Astro;
   .footer__copyright-link {
     color: #ffffff;
     text-decoration: none;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     font-size: 0.8rem;
   }
   .vertical-line {

@@ -40,3 +40,19 @@ const { bannerTitle } = Astro.props;
 		transform: translate(-50%, -50%);
 	} */
 </style>
+<script>
+  import $ from 'jquery';
+  $(function () {
+    const bannerImage = $('#banner-image');
+    bannerImage.on('load', function () {
+      $(this).addClass('img-loaded');
+    });
+    // console.log(bannerImage);
+
+    // 用來處理已經被快取過圖片的狀況(不會觸發 load 事件)
+    const isBannerCached = bannerImage[0].complete;
+    if (isBannerCached) {
+      bannerImage.trigger('load');
+    }
+  });
+</script>
