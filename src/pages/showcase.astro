@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Banner from '../components/Banner.astro';
 
 import showcaseImage from '../images/showcase.jpg';
+import awardImage from '../images/award.jpg';
 ---
 
 <Layout title="工程案例" pageDescription="巧植景觀設計目前執行中及執行完成的案件列表">
@@ -21,59 +22,111 @@ import showcaseImage from '../images/showcase.jpg';
   <div class="container py-3">
     <section class="cases__section">
       <h2 class="fw-bold">工程案例</h2>
-      <ul>
-        <li>台中大坑明倫山莊景觀工程</li>
-        <li>后里寵物咖啡景觀設計工程案</li>
-        <li>新竹某國小設計案</li>
-        <li>台中東區某國小教育園區設計工程案</li>
-        <li>芬園鐵工廠景觀設計工程案</li>
-        <li>台中吳公館景觀設計工程案</li>
+      <ul class="cases__section-list row g-3">
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">台中大坑明倫山莊景觀工程案</h3>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">后里寵物咖啡景觀設計工程案</h3>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">新竹某國小設計案</h3>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">台中東區某國小教育園區設計工程案</h3>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">芬園鐵工廠景觀設計工程案</h3>
+            </div>
+          </div>
+        </li>
+        <li class="col-12 col-md-6 col-lg-4">
+          <div class="content-box">
+            <div class="p-3">
+              <h3 class="h4">台中吳公館景觀設計工程案</h3>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
     <section class="awards__section">
       <h2 class="fw-bold">獲獎案例 & 報導</h2>
-      <h3 class="fw-bold">
-        <a
-          class="awards__section-link"
-          href="https://a.go8.in/on/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          懋榮建設花雨歇
-        </a>
-      </h3>
-      <ul>
-        <li>
-          此案與生態建築的先驅者-懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
-          2022 年台灣園冶獎的肯定，並曾受邀至
+      <div class="content-box my-4 p-3">
+        <h3 class="fw-bold text-center my-3">
           <a
-            class="awards__section-link"
-            href="https://www.president.gov.tw/News/27241"
-            target="_blank"
-            rel="noopener noreferrer">總統府領獎</a
-          >
-        </li>
-        <li>
-          <a
-            class="awards__section-link"
-            href="https://money.udn.com/money/story/5635/6576211"
+            class="awards__section-link link-effect"
+            href="https://a.go8.in/on/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            2022 建築園冶獎相關報導
+            懋榮建設花雨歇
           </a>
-        </li>
-        <li>
-          <a
-            class="awards__section-link"
-            href="https://house.chinatimes.com/20230310000009-264401"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            設計新秀楊舜媛 讓「花雨歇」日夜皆美
-          </a>
-        </li>
-      </ul>
+        </h3>
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <ul>
+              <li>
+                此案與生態建築的先驅者-懋榮建設合作，在規劃時充分考量了建物與環境間各項自然元素的結合，執行結果獲得
+                2022 年台灣園冶獎的肯定，並曾受邀至
+                <a
+                  class="awards__section-link link-effect"
+                  href="https://www.president.gov.tw/News/27241"
+                  target="_blank"
+                  rel="noopener noreferrer">總統府領獎</a
+                >
+              </li>
+              <li>
+                <a
+                  class="awards__section-link link-effect"
+                  href="https://money.udn.com/money/story/5635/6576211"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  2022 建築園冶獎相關報導
+                </a>
+              </li>
+              <li>
+                <a
+                  class="awards__section-link link-effect"
+                  href="https://house.chinatimes.com/20230310000009-264401"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  設計新秀楊舜媛 讓「花雨歇」日夜皆美
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="awards__image-wrap">
+              <Image
+                class="awards__section-image"
+                src={awardImage}
+                alt="花雨歇獲獎照片"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </Layout>
@@ -82,12 +135,51 @@ import showcaseImage from '../images/showcase.jpg';
   h1 {
     text-align: center;
   }
+  .cases__section-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 2rem 0;
+  }
   .awards__section {
+    margin-top: 3.5rem;
     .awards__section-link {
       text-decoration: none;
       color: #0e5834;
-      &:hover {
-        color: #052e1a;
+      font-weight: 700;
+      // &:hover {
+      //   color: #052e1a;
+      //   text-decoration: underline;
+      // }
+    }
+  }
+  .awards__image-wrap {
+    text-align: center;
+  }
+  .awards__section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .link-effect {
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: #0e5834;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        transform-origin: left;
+        transform: scaleX(1);
       }
     }
   }
