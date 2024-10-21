@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import AppVuePage from '../components/AppVuePage.vue';
+---
+
+<Layout title="Vue" pageDescription="整合Vue測試頁">
+  <!-- 因 astro 與 nuxt 相似，都是伺服器端渲染框架，使用 client-side 程式要記得加這個屬性 -->
+  <AppVuePage client:visible />
+</Layout>
+
+<style lang="scss"></style>
